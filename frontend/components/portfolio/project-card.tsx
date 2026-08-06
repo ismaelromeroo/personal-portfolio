@@ -1,12 +1,13 @@
 import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 import type { Project } from "@/lib/portfolio-data"
 
 export function ProjectCard({ project }: { project: Project }) {
   const hasMedia = Boolean(project.media) && !project.media.startsWith("/placeholder.svg")
 
   const content = (
-    <article className="group flex flex-col gap-3">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-muted">
+    <article className="group flex flex-col">
+      <div className="relative aspect-video overflow-hidden rounded-md bg-muted">
         {project.isVideo ? (
           <video
             className="h-full w-full object-cover"
@@ -21,8 +22,8 @@ export function ProjectCard({ project }: { project: Project }) {
             src={project.media || "/placeholder.svg"}
             alt={`${project.title} preview`}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="rounded-md object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-card">
@@ -38,19 +39,26 @@ export function ProjectCard({ project }: { project: Project }) {
         ) : null}
       </div>
 
-      <div className="flex items-baseline justify-between gap-3">
-        <h3 className="text-sm text-foreground">
-          <span className="font-semibold">{project.title}</span>
-          <span className="text-muted-foreground">{` · ${project.role}`}</span>
-        </h3>
-        <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
-          {project.year}
-        </span>
-      </div>
+      <div className="flex-1 pb-4 pt-3">
+        <div className="flex items-center gap-2">
+          <h3 className="shrink-0 text-lg font-medium tracking-wide text-neutral-100">
+            {project.title}
+          </h3>
+          {project.href ? (
+            <ArrowUpRight className="h-4 w-4 shrink-0 text-neutral-100" />
+          ) : null}
+          <span className="inline-flex shrink-0 items-center text-base tracking-wide text-[#9da0a3]">
+            {`- ${project.role}`}
+          </span>
+          <span className="ml-auto shrink-0 text-sm tracking-wide text-[#9da0a3]">
+            {project.year}
+          </span>
+        </div>
 
-      <p className="text-pretty text-sm leading-relaxed text-muted-foreground">
-        {project.description}
-      </p>
+        <p className="mt-1 text-pretty text-base tracking-wide text-[#9da0a3]">
+          {project.description}
+        </p>
+      </div>
     </article>
   )
 
@@ -60,7 +68,7 @@ export function ProjectCard({ project }: { project: Project }) {
         href={project.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="block rounded-xl outline-none ring-offset-4 ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+        className="block rounded-md outline-none ring-offset-4 ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
       >
         {content}
       </a>

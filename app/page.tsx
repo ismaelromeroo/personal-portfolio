@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "@/components/ui/background-paths"
+import { DiagonalLines } from "@/components/ui/diagonal-lines"
 import { ProfileHeader } from "@/components/portfolio/profile-header"
 import { ExperienceList } from "@/components/portfolio/experience-list"
 import { ProjectGrid } from "@/components/portfolio/project-grid"
@@ -8,26 +8,32 @@ import { nowRoles, previousRoles } from "@/lib/portfolio-data"
 export default function Page() {
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-background">
-      {/* Fixed animated flowing-line background */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <BackgroundPaths />
-      </div>
-      {/* Subtle vignette so foreground text stays readable */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-background/50 via-background/20 to-background/70"
-      />
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col px-4 pt-10 pb-16 md:pt-20 lg:pt-32">
+        <div className="relative flex flex-col">
+          {/* Curved-line background scoped to the top section; fades out toward its bottom edge */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-10 right-0 bottom-0 left-1/2 -z-10 w-screen -translate-x-1/2 md:-top-20 lg:-top-32"
+            style={{
+              maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+            }}
+          >
+            <DiagonalLines />
+          </div>
 
-      <div className="relative z-10 mx-auto flex max-w-3xl flex-col gap-14 px-6 py-16 md:py-24">
-        <div className="flex flex-col gap-10">
           <ProfileHeader />
           <ExperienceList label="Now" roles={nowRoles} />
           <ExperienceList label="Previously" roles={previousRoles} />
         </div>
 
-        <ProjectGrid />
+        <div className="pt-24">
+          <ProjectGrid />
+        </div>
 
-        <ContactSection />
+        <div className="pt-16">
+          <ContactSection />
+        </div>
       </div>
     </main>
   )
