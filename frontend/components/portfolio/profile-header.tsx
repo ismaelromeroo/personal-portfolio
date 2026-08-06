@@ -43,8 +43,8 @@ export function ProfileHeader() {
                 </span>
               ) : social.icon ? (
                 <span
-                  className={`block h-6 w-6 overflow-hidden ${
-                    social.label === "GitHub" ? "rounded-full bg-black" : "rounded-lg ring-1 ring-white/20"
+                  className={`block h-6 w-6 overflow-hidden ring-1 ring-white/20 ${
+                    social.label === "GitHub" ? "rounded-full bg-black" : "rounded-lg"
                   }`}
                 >
                   <Image
