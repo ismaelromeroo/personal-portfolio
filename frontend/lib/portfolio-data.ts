@@ -96,7 +96,7 @@ export const projects: Project[] = [
     role: "Dependency Risk MCP Server",
     year: "2026",
     description:
-      "An MCP server that tells you what breaks if you upgrade a dependency, citing changelog evidence right in coding agent.",
+      "Tells you what breaks if you upgrade a dependency, citing changelog evidence right in coding agent.",
     status: "In progress",
   },
 ]
