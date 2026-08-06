@@ -8,7 +8,7 @@ import { nowRoles, previousRoles } from "@/lib/portfolio-data"
 export default function Page() {
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-background">
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col px-4 pb-16">
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col px-4 pb-16 xl:[zoom:1.15]">
         <div className="relative flex flex-col pt-10 md:pt-20 lg:pt-32">
           {/* Curved-line background scoped to the top section's own height */}
           <div
