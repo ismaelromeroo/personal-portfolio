@@ -14,11 +14,11 @@ export function ProfileHeader() {
   return (
     <header className="flex items-center gap-2">
       <Image
-        src={profile.avatar || "/placeholder.svg"}
+        src={profile.avatar}
         alt={profile.name}
         width={256}
         height={256}
-        className="block h-24 w-24 rounded-lg object-cover md:h-28 md:w-28"
+        className="block h-24 w-24 rounded-lg object-cover"
         style={{ objectPosition: "50% 38%" }}
         priority
       />
@@ -41,19 +41,23 @@ export function ProfileHeader() {
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-[#0A66C2] text-base font-semibold text-white ring-1 ring-white/20">
                   in
                 </span>
-              ) : (
-                <span className="block h-6 w-6 overflow-hidden rounded-lg ring-1 ring-white/20">
+              ) : social.icon ? (
+                <span
+                  className={`block h-6 w-6 overflow-hidden rounded-lg ring-1 ring-white/20 ${
+                    social.label === "GitHub" ? "bg-black" : ""
+                  }`}
+                >
                   <Image
-                    src={social.icon || "/placeholder.svg"}
+                    src={social.icon}
                     alt={social.label}
                     width={48}
                     height={48}
-                    className={`h-full w-full object-contain ${
-                      social.label === "GitHub" ? "invert" : ""
+                    className={`h-full w-full object-cover ${
+                      social.label === "GitHub" ? "rounded-full" : ""
                     }`}
                   />
                 </span>
-              )}
+              ) : null}
               <IconTooltip label={social.label} />
             </a>
           ))}

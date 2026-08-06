@@ -3,34 +3,34 @@ import { ArrowUpRight } from "lucide-react"
 import type { Project } from "@/lib/portfolio-data"
 
 export function ProjectCard({ project }: { project: Project }) {
-  const hasMedia = Boolean(project.media) && !project.media.startsWith("/placeholder.svg")
+  const { media } = project
 
   const content = (
     <article className="group flex flex-col">
       <div className="relative aspect-video overflow-hidden rounded-md bg-muted">
-        {project.isVideo ? (
-          <video
-            className="h-full w-full object-cover"
-            src={project.media}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : hasMedia ? (
-          <Image
-            src={project.media || "/placeholder.svg"}
-            alt={`${project.title} preview`}
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="rounded-md object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-          />
-        ) : (
+        {!media ? (
           <div className="flex h-full w-full items-center justify-center bg-card">
             <span className="text-lg font-semibold tracking-tight text-muted-foreground">
               {project.title}
             </span>
           </div>
+        ) : project.isVideo ? (
+          <video
+            className="h-full w-full object-cover"
+            src={media}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <Image
+            src={media}
+            alt={`${project.title} preview`}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="rounded-md object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          />
         )}
         {project.status ? (
           <span className="absolute left-3 top-3 rounded-full border border-border bg-background/80 px-2 py-0.5 text-[11px] font-medium text-muted-foreground backdrop-blur">
