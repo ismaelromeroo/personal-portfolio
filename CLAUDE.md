@@ -18,7 +18,7 @@ app/                      # Next.js App Router — layout, page, global styles
 frontend/
   components/portfolio/   # The page's sections (header, experience, projects, contact)
   components/ui/          # Generic/reusable presentational pieces
-  lib/                    # portfolio-data.ts (all site content) + utils.ts
+  lib/                    # portfolio-data.ts — all site content lives here
 public/
   images/                 # Photos (avatar)
   logos/                  # Company & social logos

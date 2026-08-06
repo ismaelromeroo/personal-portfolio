@@ -19,7 +19,7 @@ function RoleRow({ role }: { role: RoleItem }) {
             alt={`${role.org} logo`}
             width={14}
             height={14}
-            className="mx-0.5 ml-1.5 inline-block h-3.5 w-3.5 rounded-sm object-contain align-[-2px]"
+            className="mx-0.5 ml-1.5 inline-block h-3.5 w-3.5 rounded-sm object-cover align-[-2px]"
           />
         ) : null}{" "}
         <span className="text-neutral-200">{role.org}</span>
@@ -28,7 +28,7 @@ function RoleRow({ role }: { role: RoleItem }) {
     </>
   )
 
-  const className = "flex items-center text-sm transition-colors md:text-base"
+  const className = "flex items-center text-base transition-colors"
 
   if (role.href) {
     return (

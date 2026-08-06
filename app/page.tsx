@@ -8,18 +8,16 @@ import { nowRoles, previousRoles } from "@/lib/portfolio-data"
 export default function Page() {
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-background">
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col px-4 pt-10 pb-16 md:pt-20 lg:pt-32">
-        <div className="relative flex flex-col">
-          {/* Curved-line background scoped to the top section; fades out toward its bottom edge */}
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col px-4 pb-16">
+        <div className="relative flex flex-col pt-10 md:pt-20 lg:pt-32">
+          {/* Curved-line background scoped to the top section's own height */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-10 right-0 bottom-0 left-1/2 -z-10 w-screen -translate-x-1/2 md:-top-20 lg:-top-32"
-            style={{
-              maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-            }}
+            className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2"
           >
-            <DiagonalLines />
+            <div className="flex h-full w-full items-center justify-center">
+              <DiagonalLines />
+            </div>
           </div>
 
           <ProfileHeader />
@@ -27,7 +25,7 @@ export default function Page() {
           <ExperienceList label="Previously" roles={previousRoles} />
         </div>
 
-        <div className="pt-24">
+        <div className="pt-12">
           <ProjectGrid />
         </div>
 

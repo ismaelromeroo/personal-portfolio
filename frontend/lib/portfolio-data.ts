@@ -6,8 +6,8 @@
 export interface SocialLink {
   label: string
   href: string
-  /** Path to an icon in /public. */
-  icon: string
+  /** Path to an icon in /public. Omit for links that render their own mark (e.g. LinkedIn). */
+  icon?: string
 }
 
 export interface RoleItem {
@@ -28,8 +28,8 @@ export interface Project {
   role: string
   year: string
   description: string
-  /** Path to an image or video in /public. Leave blank to show a placeholder. */
-  media: string
+  /** Path to an image or video in /public. Omit to show a text fallback card. */
+  media?: string
   /** Set to true if `media` points to a video file. */
   isVideo?: boolean
   href?: string
@@ -42,17 +42,19 @@ export const profile = {
   title: "Software Engineer",
   avatar: "/images/avatar.jpg",
   socials: [
-    { label: "LinkedIn", href: "https://linkedin.com/in/ismaelromeroo", icon: "" },
-    { label: "GitHub", href: "https://github.com/ismaelromeroo", icon: "/logos/github.png" },
-    { label: "Instagram", href: "https://www.instagram.com/ismaaeel.md/", icon: "/logos/instagram.png" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/ismaelromeroo" },
+    { label: "GitHub", href: "https://github.com/ismaelromeroo", icon: "/logos/github.webp" },
+    { label: "Instagram", href: "https://www.instagram.com/ismaaeel.md/", icon: "/logos/instagram.webp" },
   ] as SocialLink[],
 }
 
 export const nowRoles: RoleItem[] = [
   {
-    role: "B.S. Computer Science & Statistics — 3.93/4.0 GPA",
+    role: "Computer Science & Statistics",
     org: "UNF",
+    note: "3.93/4.0 GPA",
     logo: "/logos/unf.webp",
+    href: "https://www.unf.edu/"
   },
 ]
 
@@ -60,19 +62,19 @@ export const previousRoles: RoleItem[] = [
   {
     role: "Product Management Intern",
     org: "Stillwater Insurance",
-    note: "Power BI · SAS",
     logo: "/logos/stillwater.webp",
+    href : "https://stillwaterinsurance.com/"
   },
   {
     role: "Software Engineering Intern",
     org: "BlendedXR",
-    note: "AR/XR Operator Console",
     logo: "/logos/blendedxr.webp",
+    href: "https://blendedxr.com/"
   },
   {
     role: "AI Researcher",
-    org: "Independent Research",
-    note: "Medical AI benchmarking · in collaboration with Dr. Hoyt (NSU), D'Amario (NSU), and MIT · publication in progress",
+    org: "Medical Ai Benchmarking",
+    note: "in collaboration with Dr. Hoyt (VCU), Dr. D'Amario (NSU) + (MIT)",
     // Add the publication link here once it's published:
     // href: "https://...",
   },
@@ -85,7 +87,7 @@ export const projects: Project[] = [
     role: "AI-Powered Patient Triage",
     year: "2026",
     description:
-      "A voice-first intake agent that triages patient symptoms into a structured ESI (1–5) acuity score to cut ER wait times.",
+      "A voice-first intake agent that triages patient symptoms, to cut ER wait times.",
     media: "/logos/firstin.jpg",
     href: "https://devpost.com/software/hackabull-h9rgxl",
   },
@@ -95,7 +97,6 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "An MCP server that tells you what breaks if you upgrade a dependency, citing changelog evidence right in coding agent.",
-    media: "/placeholder.svg?height=400&width=640",
     status: "In progress",
   },
 ]

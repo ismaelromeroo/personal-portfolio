@@ -19,7 +19,7 @@ export function DiagonalLines() {
         d={CURVES_D}
         stroke="url(#bg-lines-radial)"
         strokeWidth="0.5"
-        strokeOpacity="0.11"
+        strokeOpacity="0.05"
       />
       <defs>
         <radialGradient
