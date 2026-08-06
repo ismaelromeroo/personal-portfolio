@@ -93,7 +93,7 @@ export const projects: Project[] = [
   },
   {
     title: "Mitig8",
-    role: "Dependency-Upgrade Risk MCP Server",
+    role: "Dependency Risk MCP Server",
     year: "2026",
     description:
       "An MCP server that tells you what breaks if you upgrade a dependency, citing changelog evidence right in coding agent.",
