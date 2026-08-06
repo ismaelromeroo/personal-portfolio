@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 import type { Project } from "@/lib/portfolio-data"
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -39,8 +40,9 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="flex items-baseline justify-between gap-3">
-        <h3 className="text-sm text-foreground">
+        <h3 className="flex items-center gap-1 text-sm text-foreground">
           <span className="font-semibold">{project.title}</span>
+          {project.href ? <ArrowUpRight className="h-4 w-4 shrink-0 text-foreground" /> : null}
           <span className="text-muted-foreground">{` · ${project.role}`}</span>
         </h3>
         <span className="shrink-0 text-xs tabular-nums text-muted-foreground">

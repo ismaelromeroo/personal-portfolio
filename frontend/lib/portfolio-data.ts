@@ -40,20 +40,18 @@ export interface Project {
 export const profile = {
   name: "Ismael Romero",
   title: "Software Engineer",
-  /** Replace with your avatar, e.g. "/images/avatar.png" after adding it to /public. */
-  avatar: "/placeholder.svg?height=128&width=128",
+  avatar: "/images/avatar.jpg",
   socials: [
-    { label: "LinkedIn", href: "https://linkedin.com/in/ismaelromeroo", icon: "/logos/linkedin.jpg" },
-    { label: "GitHub", href: "https://github.com/ismaelromeroo", icon: "/logos/github.webp" },
-    { label: "Instagram", href: "https://instagram.com", icon: "/logos/instagram.webp" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/ismaelromeroo", icon: "" },
+    { label: "GitHub", href: "https://github.com/ismaelromeroo", icon: "/logos/github.png" },
+    { label: "Instagram", href: "https://www.instagram.com/ismaaeel.md/", icon: "/logos/instagram.png" },
   ] as SocialLink[],
 }
 
 export const nowRoles: RoleItem[] = [
   {
-    role: "B.S. Computer Science & Statistics",
-    org: "University of North Florida",
-    note: "3.93/4.0 GPA",
+    role: "B.S. Computer Science & Statistics — 3.93/4.0 GPA",
+    org: "UNF",
     logo: "/logos/unf.webp",
   },
 ]
@@ -74,7 +72,7 @@ export const previousRoles: RoleItem[] = [
   {
     role: "AI Researcher",
     org: "Independent Research",
-    note: "Medical AI benchmarking · publication in progress",
+    note: "Medical AI benchmarking · in collaboration with Dr. Hoyt (NSU), D'Amario (NSU), and MIT · publication in progress",
     // Add the publication link here once it's published:
     // href: "https://...",
   },
@@ -87,7 +85,7 @@ export const projects: Project[] = [
     role: "AI-Powered Patient Triage",
     year: "2026",
     description:
-      "A voice-first intake agent (ElevenLabs) that captures symptoms into structured triage fields, with a Gemini pipeline assigning each patient an ESI (1–5) acuity score to cut ER wait times. Patient and admin dashboards built on Supabase.",
+      "A voice-first intake agent that triages patient symptoms into a structured ESI (1–5) acuity score to cut ER wait times.",
     media: "/logos/firstin.jpg",
     href: "https://devpost.com/software/hackabull-h9rgxl",
   },
@@ -96,7 +94,7 @@ export const projects: Project[] = [
     role: "Dependency-Upgrade Risk MCP Server",
     year: "2026",
     description:
-      "An MCP server that answers \u201Cwhat breaks if I upgrade this dependency,\u201D citing changelog evidence in Claude Code. Built on a hybrid retrieval layer (dense + BM25 + RRF) for citation-grounded migration risk analysis.",
+      "An MCP server that tells you what breaks if you upgrade a dependency, citing changelog evidence right in coding agent.",
     media: "/placeholder.svg?height=400&width=640",
     status: "In progress",
   },
@@ -104,6 +102,6 @@ export const projects: Project[] = [
 
 export const contact = {
   prompt: "Want to build something together or just want to say hi?",
-  ctaLabel: "Let's chat",
   email: "ism.romerr@gmail.com",
+  phone: "904-927-6679",
 }
