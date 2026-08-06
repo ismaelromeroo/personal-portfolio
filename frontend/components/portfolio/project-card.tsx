@@ -40,7 +40,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="flex-1 pb-4 pt-3">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
           <h3 className="shrink-0 text-lg font-medium tracking-wide text-neutral-100">
             {project.title}
           </h3>
@@ -50,7 +50,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="inline-flex shrink-0 items-center text-base tracking-wide text-[#9da0a3]">
             {`- ${project.role}`}
           </span>
-          <span className="ml-auto shrink-0 text-sm tracking-wide text-[#9da0a3]">
+          <span className="shrink-0 text-sm tracking-wide text-[#9da0a3] sm:ml-auto">
             {project.year}
           </span>
         </div>

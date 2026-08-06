@@ -10,7 +10,7 @@ interface ExperienceListProps {
 function RoleRow({ role }: { role: RoleItem }) {
   const inner = (
     <>
-      <CornerDownRight aria-hidden="true" className="mr-2 h-4 w-4 shrink-0 text-[#75787b]" />
+      <CornerDownRight aria-hidden="true" className="mr-2 mt-[3px] h-4 w-4 shrink-0 text-[#75787b]" />
       <span className="text-pretty leading-6 text-[#9da0a3]">
         {role.role}
         {role.logo ? (
@@ -28,7 +28,7 @@ function RoleRow({ role }: { role: RoleItem }) {
     </>
   )
 
-  const className = "flex items-center text-base transition-colors"
+  const className = "flex items-start text-base transition-colors"
 
   if (role.href) {
     return (
