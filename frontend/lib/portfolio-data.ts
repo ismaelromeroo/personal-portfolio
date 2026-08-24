@@ -89,7 +89,7 @@ export const projects: Project[] = [
     description:
       "A voice-first intake agent that triages patient symptoms, to cut ER wait times.",
     media: "/logos/firstin.jpg",
-    href: "https://devpost.com/software/hackabull-h9rgxl",
+    href: "https://firstin-one.vercel.app",
   },
   {
     title: "Mitig8",
