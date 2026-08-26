@@ -1,10 +1,16 @@
 import Image from "next/image"
 import { CornerDownRight } from "lucide-react"
+import { Reveal } from "@/components/ui/reveal"
 import type { RoleItem } from "@/lib/portfolio-data"
+
+/** Stagger step between consecutive role rows, in milliseconds. */
+const ROW_STEP_MS = 30
 
 interface ExperienceListProps {
   label: string
   roles: RoleItem[]
+  /** Milliseconds after mount before the section's label fades in. */
+  revealDelay: number
 }
 
 function RoleRow({ role }: { role: RoleItem }) {
@@ -46,14 +52,18 @@ function RoleRow({ role }: { role: RoleItem }) {
   return <div className={className}>{inner}</div>
 }
 
-export function ExperienceList({ label, roles }: ExperienceListProps) {
+export function ExperienceList({ label, roles, revealDelay }: ExperienceListProps) {
   return (
     <section className="pt-4">
-      <h2 className="text-base font-normal uppercase text-neutral-200">{label}</h2>
+      <Reveal delay={revealDelay}>
+        <h2 className="text-base font-normal uppercase text-neutral-200">{label}</h2>
+      </Reveal>
       <ul className="flex flex-col">
         {roles.map((role, index) => (
           <li key={`${role.role}-${index}`}>
-            <RoleRow role={role} />
+            <Reveal delay={revealDelay + ROW_STEP_MS * (index + 1)}>
+              <RoleRow role={role} />
+            </Reveal>
           </li>
         ))}
       </ul>

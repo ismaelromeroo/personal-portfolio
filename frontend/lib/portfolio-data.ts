@@ -101,15 +101,6 @@ export const projects: Project[] = [
     href: "https://github.com/ismaelromeroo/safecontext-gb10hack",
   },
   {
-    title: "Inbound Qualifier",
-    role: "Lead Qualification Agent",
-    year: "2026",
-    description:
-      "An AI agent that qualifies inbound Instagram leads and routes them to the right next step.",
-    // media: "/logos/inbound-qualifier.jpg",
-    href: "https://github.com/ismaelromeroo/kizen-hackathon-agentic-workflow",
-  },
-  {
     title: "Covered",
     role: "Contingent Discount Engine",
     year: "2026",
