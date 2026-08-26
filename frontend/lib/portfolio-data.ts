@@ -96,7 +96,7 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "A local AI agent that lets you query confidential files and transactions without ever exposing the sensitive data to the cloud.",
-    // media: "/logos/safecontext.jpg",
+    media: "/logos/safecontext.png",
     href: "https://github.com/ismaelromeroo/safecontext-gb10hack",
   },
   {
@@ -104,8 +104,8 @@ export const projects: Project[] = [
     role: "Contingent Discount Engine",
     year: "2026",
     description:
-      "A Shopify app that turns a flat discount into a 1-in-10 chance your order is free, hedged on a prediction market to keep the cost fixed.",
-    // media: "/logos/covered.jpg",
+      "A Shopify app that turns a flat discount into a chance your order is free, hedged on a prediction market to keep the cost fixed.",
+    media: "/logos/covered.png",
     href: "https://github.com/ismaelromeroo/shopifyhack",
   },
   {
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "An AI voice agent that calls hotels to negotiate rates and upgrades for travel advisors.",
-    // media: "/logos/calldesk.jpg",
+    media: "/logos/calldesk.png",
     href: "https://devpost.com/software/calldesk",
   },
 ]
