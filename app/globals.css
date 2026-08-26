@@ -161,3 +161,9 @@
     font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition-duration: 0s;
+  }
+}
