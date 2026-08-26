@@ -92,12 +92,40 @@ export const projects: Project[] = [
     href: "https://devpost.com/software/hackabull-h9rgxl",
   },
   {
-    title: "Mitig8",
-    role: "Dependency Risk MCP Server",
+    title: "SafeContext",
+    role: "Local AI Privacy Layer",
     year: "2026",
     description:
-      "Tells you what breaks if you upgrade a dependency, citing changelog evidence right in coding agent.",
-    status: "In progress",
+      "A local AI agent that lets you query confidential files and transactions without ever exposing the sensitive data to the cloud.",
+    // media: "/logos/safecontext.jpg",
+    href: "https://github.com/ismaelromeroo/safecontext-gb10hack",
+  },
+  {
+    title: "Inbound Qualifier",
+    role: "Lead Qualification Agent",
+    year: "2026",
+    description:
+      "An AI agent that qualifies inbound Instagram leads and routes them to the right next step.",
+    // media: "/logos/inbound-qualifier.jpg",
+    href: "https://github.com/ismaelromeroo/kizen-hackathon-agentic-workflow",
+  },
+  {
+    title: "Covered",
+    role: "Contingent Discount Engine",
+    year: "2026",
+    description:
+      "A Shopify app that turns a flat discount into a 1-in-10 chance your order is free, hedged on a prediction market to keep the cost fixed.",
+    // media: "/logos/covered.jpg",
+    href: "https://github.com/ismaelromeroo/shopifyhack",
+  },
+  {
+    title: "CallDesk",
+    role: "AI Voice Agent for Travel",
+    year: "2026",
+    description:
+      "An AI voice agent that calls hotels to negotiate rates and upgrades for travel advisors.",
+    // media: "/logos/calldesk.jpg",
+    href: "https://devpost.com/software/calldesk",
   },
 ]
 
