@@ -66,15 +66,14 @@ export const previousRoles: RoleItem[] = [
     href : "https://stillwaterinsurance.com/"
   },
   {
-    role: "Software Engineering Intern",
+    role: "Software Engineer Intern",
     org: "BlendedXR",
     logo: "/logos/blendedxr.webp",
     href: "https://blendedxr.com/"
   },
   {
-    role: "AI Researcher",
-    org: "Medical Ai Benchmarking",
-    note: "in collaboration with Dr. Hoyt (VCU), Dr. D'Amario (NSU) + (MIT)",
+    role: "Medical AI Research",
+    org: "in collaboration with Dr. Hoyt (VCU), Dr. D'Amario (NSU) + (MIT)",
     // Add the publication link here once it's published:
     // href: "https://...",
   },
