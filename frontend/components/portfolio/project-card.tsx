@@ -55,7 +55,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
 
-        <p className="mt-1 text-pretty text-base tracking-wide text-[#9da0a3]">
+        <p className="mt-1 text-pretty text-sm tracking-wide text-[#9da0a3]">
           {project.description}
         </p>
       </div>
