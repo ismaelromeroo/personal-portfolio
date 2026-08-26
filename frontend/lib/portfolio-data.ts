@@ -104,7 +104,7 @@ export const projects: Project[] = [
     role: "Contingent Discount Engine",
     year: "2026",
     description:
-      "A Shopify app that turns a flat discount into a chance your order is free, hedged on a prediction market to keep the cost fixed.",
+      "turns a flat discount into a chance your order is free, hedged on a prediction market to keep the cost fixed.",
     media: "/logos/covered.png",
     href: "https://github.com/ismaelromeroo/shopifyhack",
   },
