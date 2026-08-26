@@ -36,39 +36,46 @@ export function ProfileHeader() {
 
         <Reveal delay={120}>
           <nav className="mt-1.5 inline-flex items-center" aria-label="Social links">
-            {profile.socials.map((social, index) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className={`group/icon relative inline-block ${index > 0 ? "ml-1" : ""}`}
-              >
-                {social.label === "LinkedIn" ? (
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-[#0A66C2] text-base font-semibold text-white ring-1 ring-white/20">
-                    in
-                  </span>
-                ) : social.icon ? (
-                  <span
-                    className={`block h-6 w-6 overflow-hidden rounded-lg ring-1 ring-white/20 ${
-                      social.label === "GitHub" ? "bg-black" : ""
-                    }`}
-                  >
-                    <Image
-                      src={social.icon}
-                      alt={social.label}
-                      width={48}
-                      height={48}
-                      className={`h-full w-full object-cover ${
-                        social.label === "GitHub" ? "rounded-full" : ""
-                      }`}
-                    />
-                  </span>
-                ) : null}
-                <IconTooltip label={social.label} />
-              </a>
-            ))}
+            {profile.socials.map((social, index) => {
+              const tilt = index % 2 === 0 ? "-rotate-6" : "rotate-6"
+              const tiltClass = `${tilt} transition-transform duration-300 ease-out group-hover/icon:rotate-0`
+
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className={`group/icon relative inline-block ${index > 0 ? "ml-1" : ""}`}
+                >
+                  {social.label === "LinkedIn" ? (
+                    <span
+                      className={`inline-flex h-6 w-6 items-center justify-center rounded-lg bg-[#0A66C2] text-base font-semibold text-white ring-1 ring-white/20 ${tiltClass}`}
+                    >
+                      in
+                    </span>
+                  ) : social.icon ? (
+                    <span
+                      className={`block h-6 w-6 overflow-hidden rounded-lg ring-1 ring-white/20 ${
+                        social.label === "GitHub" ? "bg-black" : ""
+                      } ${tiltClass}`}
+                    >
+                      <Image
+                        src={social.icon}
+                        alt={social.label}
+                        width={48}
+                        height={48}
+                        className={`h-full w-full object-cover ${
+                          social.label === "GitHub" ? "rounded-full" : ""
+                        }`}
+                      />
+                    </span>
+                  ) : null}
+                  <IconTooltip label={social.label} />
+                </a>
+              )
+            })}
           </nav>
         </Reveal>
       </div>
