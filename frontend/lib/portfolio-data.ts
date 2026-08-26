@@ -115,7 +115,7 @@ export const projects: Project[] = [
     description:
       "An AI voice agent that calls hotels to negotiate rates and upgrades for travel advisors.",
     media: "/logos/calldesk.png",
-    href: "https://devpost.com/software/calldesk",
+    href: "https://github.com/ismaelromeroo/travelhacks",
   },
 ]
 
