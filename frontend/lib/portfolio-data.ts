@@ -120,7 +120,6 @@ export const projects: Project[] = [
 ]
 
 export const contact = {
-  prompt: "Want to build something together or just want to say hi?",
+  prompt: "Want to build something together or just want to connect?",
   email: "ism.romerr@gmail.com",
-  phone: "904-927-6679",
 }

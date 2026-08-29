@@ -11,12 +11,6 @@ export function ContactSection() {
         >
           {contact.email}
         </a>
-        <a
-          href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}
-          className="underline decoration-muted-foreground/40 underline-offset-4 transition-colors hover:decoration-foreground"
-        >
-          {contact.phone}
-        </a>
       </div>
     </footer>
   )
